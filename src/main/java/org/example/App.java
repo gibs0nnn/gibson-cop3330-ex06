@@ -13,14 +13,22 @@ public class App
     public static void main( String[] args )
     {
         Scanner scanner = new Scanner(System.in);
+        //Input
         System.out.print("What is your current age? ");
-        int age = scanner.nextInt();
+        String strAge = scanner.next();
         System.out.print("At what age would you like to retire? ");
-        int retire = scanner.nextInt();
+        String strRetire = scanner.next();
+
+        //Parsing
+        int age = Integer.parseInt(strAge);
+        int retire = Integer.parseInt(strRetire);
+
+        //Evaluation
         int workLeft = retire - age;
         int year = Calendar.getInstance().getWeekYear();
         int retireYear = year + workLeft;
 
+        //Output
         if(workLeft <= 0) {
             System.out.println("You can retire now!");
         } else {
